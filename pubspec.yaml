@@ -2,7 +2,7 @@ name: coming_soon
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 2.0.0+1   # ← نسخه را به v2 رساندم
 
 environment:
   sdk: ^3.9.2
@@ -10,13 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
-
-  # PocketBase client
   pocketbase: ^0.18.1
-
-  # HTTP client (for your Node.js OTP backend)
   http: ^1.2.1
 
 dev_dependencies:
