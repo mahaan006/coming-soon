@@ -1,8 +1,10 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    id("org.jetbrains.kotlin.android")      // use the official id
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    // Google Services plugin (required for google-services.json)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -19,10 +21,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.coming_soon"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -30,14 +29,33 @@ android {
     }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+        getByName("release") {
+            // Sign with debug for now so `flutter run --release` works
             signingConfig = signingConfigs.getByName("debug")
+            // Uncomment when you’re ready for ProGuard/shrinking:
+            // isMinifyEnabled = true
+            // proguardFiles(
+            //     getDefaultProguardFile("proguard-android-optimize.txt"),
+            //     "proguard-rules.pro"
+            // )
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Firebase Bill of Materials to keep versions in sync
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // Firebase Auth
+    implementation("com.google.firebase:firebase-auth")
+
+    // Firestore if you’re using it
+    implementation("com.google.firebase:firebase-firestore")
+
+    // Add more Firebase products here if needed, e.g. Analytics, Storage:
+    // implementation("com.google.firebase:firebase-analytics-ktx")
 }

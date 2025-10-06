@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466715073131",
+    "project_id": "coming-soon-db431",
+    "storage_bucket": "coming-soon-db431.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466715073131:android:92604066fdbbe652002f2e",
+        "android_client_info": {
+          "package_name": "com.example.coming_soon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73TTYtxtDRBGdpCquMae6ve5z3XePqBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
